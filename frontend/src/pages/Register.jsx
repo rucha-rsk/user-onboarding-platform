@@ -29,6 +29,18 @@ export default function Register() {
     setLoading(true);
 
     // Validation
+    if (formData.firstName.length < 2) {
+      setError('firstName length must be at least 2 characters long');
+      setLoading(false);
+      return;
+    }
+
+    if (formData.lastName.length < 2) {
+      setError('lastName length must be at least 2 characters long');
+      setLoading(false);
+      return;
+    }
+
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       setLoading(false);
